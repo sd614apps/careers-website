@@ -1,2 +1,10 @@
-# careers-website
-Careers Website
+# Careers Website
+
+- Replit
+- Unsplash
+- Lorem Ipsum
+- Get Bootstrap
+- Render
+- Flask
+- HTML
+- CSS
