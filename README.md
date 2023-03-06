@@ -8,3 +8,4 @@
 - Flask
 - HTML
 - CSS
+- mailtolink.me
