@@ -10,3 +10,4 @@
 - HTML
 - CSS
 - mailtolink.me (mailto template)
+- planetscale.com (MySQL)
