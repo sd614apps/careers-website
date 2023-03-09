@@ -1,6 +1,7 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
+import os
 
-db_conn_uri = "mysql+pymysql://fvhzp2iuhn01uiou1og6:pscale_pw_3KJ57CxvKjJI8EeAwwPPzdBSU8N5hxdMjYuSeS2s4RE@ap-south.connect.psdb.cloud/sd614appscareers?charset=utf8mb4"
+db_conn_uri = os.environ['DB_CONNECTION_STRING']
 
 engine = create_engine(
   db_conn_uri,
@@ -9,3 +10,13 @@ engine = create_engine(
       "ssl_ca": "/etc/ssl/certs/ca-certificates.crt"
     }
   })
+
+
+def load_jobs_from_db():
+  with engine.connect() as conn:
+    results = conn.execute(text("select * from jobs"))
+
+    jobs = []
+    for row in results:
+      jobs.append(dict(row._mapping))
+    return jobs
