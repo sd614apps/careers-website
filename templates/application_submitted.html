@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{job.title}} - Application Submitted</title>
+    {% include 'bootstrap.html' %}
+    <link rel="icon" type="image/x-icon" href="https://careers-website.sd614apps.repl.co/static/images/careers-website-icon.ico">
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    {% include 'banner.html' %}
+
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        Careers at {{company_name}}
+      </h1>
+      
+      <p>Your application for the role of <b>{{job.title}}</b> at {{company_name}} has been submitted successfully!</p>
+      
+      <b>Full Name</b>
+      <div class="mb-4">{{application['full_name']}}</div>
+  
+      <b>Email</b>
+      <div class="mb-4">{{application['email']}}</div>
+  
+      <b>LinkedIn URL</b>
+      <div class="mb-4">{{application['linkedin_url']}}</div>
+  
+      <b>Education</b>
+      <div class="mb-4">{{application['education']}}</div>
+  
+      <b>Work Experience</b>
+      <div class="mb-4">{{application['work_experience']}}</div>
+  
+      <b>Resume URL</b>
+      <div class="mb-4">{{application['resume_url']}}</div>
+    </div>
+    
+    {% include 'footer.html' %}
+  </body>
+</html>
