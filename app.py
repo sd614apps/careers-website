@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 from database import load_jobs_from_db, load_job_from_db
 
 
@@ -29,6 +29,15 @@ def show_job(id):
   return render_template("jobpage.html",
                         job=job,
                         company_name=company_name)
+
+
+@app.route("/job/<id>/apply")
+def apply_to_job(id):
+  data = request.args
+  # store this in the DB
+  # send an email acknowledgement
+  # display the acknowledgement
+  return jsonify(data)
   
 
 if __name__ == "__main__":
