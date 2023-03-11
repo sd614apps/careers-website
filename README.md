@@ -1,13 +1,15 @@
 # Careers Website
 
-- Replit (Development)
-- Unsplash (Images)
-- Excalidraw (Wireframes)
-- Lorem Ipsum (Text generator)
-- Get Bootstrap (FE frameworks)
-- Render (Deploy)
-- Flask
-- HTML
-- CSS
+- replit.com (Development)
+- unsplash.com (Images)
+- excalidraw.com (Wireframes)
+- loremipsum.io (Text generator)
+- getbootstrap.com (FE frameworks)
+- render.com (Deploy)
+- Flask/Python (Backend)
+- HTML, CSS (Frontend)
+- MySQL (Storage)
 - mailtolink.me (mailto template)
-- planetscale.com (MySQL)
+- planetscale.com (MySQL DB)
+- mailjet.com (Send mails)
+- hcaptcha.com (Captcha)

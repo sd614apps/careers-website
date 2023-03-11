@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from database import load_jobs_from_db, load_job_from_db, add_application_to_db
 
 app = Flask(__name__)
@@ -31,6 +31,14 @@ def show_job(id):
                            company_name=company_name)
 
 
+# [TODO] provide an API to access individual applications by ID
+# API to access individual job listings by ID
+@app.route("/api/job/<id>")
+def show_job_json(id):
+    job = load_job_from_db(id)
+    return jsonify(job)
+
+
 @app.route("/job/<id>/apply", methods=['post'])
 def apply_to_job(id):
     data = request.form
@@ -38,13 +46,20 @@ def apply_to_job(id):
     # store this in the DB
     add_application_to_db(id, data)
 
-    # send an email acknowledgement
+    # [TODO] send an email acknowledgement to admin and candidate
+    # [TODO] use captcha in the application form to prevent spam/bots
 
     # display the acknowledgement
     return render_template("application_submitted.html",
                            application=data,
                            job=job,
                            company_name=company_name)
+
+
+# [TODO] Future work
+# Admin login interface to check submitted applications
+# allow admins to mark applications as accepted/rejected
+# User login interface to check application status
 
 
 if __name__ == "__main__":
